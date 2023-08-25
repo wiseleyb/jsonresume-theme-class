@@ -38,7 +38,7 @@
   <header>
   <h1>{{name}}</h1>
   {{#if label}}
-  <h2>{{label}}</h2>
+  <h2>Senior Software Engineer</h2>
   {{/if}}
   </header>
 
@@ -230,73 +230,23 @@
   {{#if resume.education.length}}
   <section id="education">
     <h2>Education</h2>
-    {{#each resume.education}}
-    <div class="item">
-
-      <div class="split">
-      {{#if institution}}
-      <div class="institution">
-        {{institution}}
-      </div>
-      {{/if}}
-
-      <div class="study_date">
-        {{#if startDate}}
-        <span class="startDate">
-          {{{date startDate}}}
-        </span>
-        <span class="endDate">
-          - {{{date endDate}}}
-        </span>
-        {{/if}}
-      </div>
-
-      {{#if url}}
-      <div class="work_website">
-        <a href="{{url}}">{{url}}</a>
-      </div>
-      {{/if}}
-      </div>
-
-      {{#if qualification}}
-      <div class="qualification">
-        {{qualification}}
-      </div>
-      {{/if}}
-
-      {{#if courses.length}}
-      <ul class="courses">
-        {{#each courses}}
-        <li>{{.}}</li>
-        {{/each}}
-      </ul>
-      {{/if}}
-
-      {{#if dissertation}}
-      <div class="dissertation">
-        <span>Dissertation: </span>{{dissertation}}
-      </div>
-      {{/if}}
-    </div>
-    {{/each}}
+    <p>I've audited classes and/or taken night courses at Harvard, Boston University, and Boston College but haven't formally gone to college. I spend hours a day reading/researching things and am obsessed on learning. I follow most major industry news (related to my field) and spend a lot of time keeping up with the endless "new" in this industry.
+    </p>
   </section>
   {{/if}}
 
   {{#if resume.skills.length}}
   <section id="skills">
     <h2>Skills</h2>
-    {{#each resume.skills}}
     <div class="item">
-      {{#if name}}
-      <div class="name">
-        {{name}}
-      </div>
-      {{/if}}
-      {{#if level}}
-      <div class="level">
-        <em>{{level}}</em>
-      </div>
-      {{/if}}
+      <ul class="keywords-skills-compact">
+        {{#each resume.skills}}
+          {{#if name}}
+            <li>{{name}}</li>
+          {{/if}}
+        {{/each}}
+      </ul>
+
       {{#if keywords.length}}
       <ul class="keywords">
         {{#each keywords}}
@@ -304,77 +254,12 @@
         {{/each}}
       </ul>
       {{/if}}
-    </div>
-    {{/each}}
-  </section>
-  {{/if}}
 
-  {{#if resume.languages.length}}
-  <section id="languages">
-    <h2>Languages</h2>
-    {{#each resume.languages}}
-    <div class="item">
-      {{#if language}}
-      <div class="language">
-        {{language}}
-      </div>
-      {{/if}}
-      {{#if fluency}}
-      <div class="level">
-        <em>{{fluency}}</em>
-      </div>
-      {{/if}}
     </div>
-    {{/each}}
-  </section>
-  {{/if}}
-
-  {{#if resume.interests.length}}
-  <section id="interests">
-    <h2>Interests</h2>
-    {{#each resume.interests}}
-    <div class="item">
-      {{#if name}}
-      <div class="name">
-        {{name}}
-      </div>
-      {{/if}}
-      {{#if keywords.length}}
-      <ul class="keywords">
-        {{#each keywords}}
-        <li>{{.}}</li>
-        {{/each}}
-      </ul>
-      {{/if}}
-    </div>
-    {{/each}}
-  </section>
-  {{/if}}
-
-  {{#if resume.references.length}}
-  <section id="references">
-    <h2>References</h2>
-    {{#each resume.references}}
-    <div class="item">
-      {{#if reference}}
-      <blockquote class="reference">
-        {{reference}}
-      </blockquote>
-      {{/if}}
-      {{#if name}}
-      <div class="name">
-        — {{name}}
-      </div>
-      {{/if}}
-    </div>
-    {{/each}}
   </section>
   {{/if}}
 
   </div>
 
-  <script>
-    console.log('Theme made with 💕 using JSON Resume and Handlebars!\nhttps://github.com/jsonresume/jsonresume-theme-class')
-  </script>
   </body>
 </html>

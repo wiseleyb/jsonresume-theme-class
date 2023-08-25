@@ -186,3 +186,11 @@ header h2 {
 #interests {
   clear: both;
 }
+
+/* custom */
+#skills .item li {
+  display: inline-block;
+}
+#skills .item li:not(:last-child)::after {
+  content: ";";
+}
